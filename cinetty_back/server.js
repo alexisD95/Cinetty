@@ -23,6 +23,7 @@ mongoose.connect(uri, {
 // Connection approval
 mongoose.connection.on('connected', function(){
     console.log("MongoDB database connection established successfully");
+    console.log(`Browse : http://localhost:${port}`);
 });
 
 app.listen(port, () => {
