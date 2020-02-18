@@ -12,8 +12,9 @@ Création d'un projet en vue de l'amélioration de la propreté des rues.
 	se placer dans le fichier source du back-end
 
 	lancer les commande suivantes en tant que terminal:
+		- cd ./cinetty_back
 		- npm install
-		- npm run dev
+		- nodemon server
 		- npm start
 
 [Fonctionnement]
