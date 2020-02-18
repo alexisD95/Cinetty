@@ -1,3 +1,4 @@
+#!/bin/sh
 @echo off
 git branch
 git add .
