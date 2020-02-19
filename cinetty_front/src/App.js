@@ -11,7 +11,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-    var number;
+    //var number;
 
     //ajouter les fonctions crées:
     // this.nom_fonction = this.nom_fonction.bind(this);
@@ -22,19 +22,22 @@ class App extends Component {
 
   getIDPoubelle() {
     //utiliser le path pour trouver l'id de la poubelle scannée avec son QR code
-
+    
     const url = require('url')
     const qs = require('querystring')
-
+    
     const serverHandle = function (req, res) {
       const route = url.parse(req.url)
       const path = route.pathname
       const params = qs.parse(route.query)
+      
 
       res.writeHead(200, { 'Content-Type': 'text/plain' });
-
+      
       if (path === '/id' && 'number' in params) {
         res.write('You are connected to trash n° ' + params['number'])
+
+        
       } else {
         res.write('Try to scan a QR')
       }
@@ -42,10 +45,11 @@ class App extends Component {
       res.end();
     }
 
-    console.log('number');
+    //console.log('number');
   }
 
   updatePoubelle(number) {
+    
     //utilisé pour mettre à jour les infos de la poubelle
 
   }
@@ -60,6 +64,11 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <div>
+          en dessous le numero de la Poubelle
+          {this.getIDPoubelle()}
+          
+        </div>
       </div>
     );
   }

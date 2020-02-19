@@ -34,5 +34,6 @@ app.use('/users', usersRouter);
 
 //Port listening
 app.listen(port, () => {
+    console.log(`You can go to the address: http://localhost:${port}`)
     console.log(`Server is running on port : ${port}`);
 })
