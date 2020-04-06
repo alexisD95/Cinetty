@@ -27,10 +27,14 @@ mongoose.connection.on('connected', function(){
 });
 
 //Routeur and routes initialization
-const exercisesRouter = require('./routes/exercises');
-const usersRouter = require('./routes/users');
-app.use('/exercises', exercisesRouter);
-app.use('/users', usersRouter);
+const reportsRouter = require('./routes/reports');
+app.use('/reports', reportsRouter);
+const signupRouter = require('./routes/signup');
+app.use('/signup', signupRouter);
+const signinRouter = require('./routes/signin');
+app.use('/signin', signinRouter);
+const verifyRouter = require('./routes/verify');
+app.use('/verify', verifyRouter);
 
 //Port listening
 app.listen(port, () => {
